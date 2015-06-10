@@ -4,7 +4,8 @@ SDIR=src
 ODIR=obj
 
 all :
-	$(JC) -d $(ODIR) src/Main.java
+	$(JC) -cp $(ODIR)/commons-cli-1.3.jar -d $(ODIR) src/Main.java
+
 
 clean :
 	rm -f $(ODIR)/*.class
@@ -12,4 +13,4 @@ clean :
 test : clean all run
 
 run : 
-	$(JR) -classpath $(ODIR) Main
+	$(JR) -cp $(ODIR)/commons-cli-1.3.jar:$(ODIR) Main

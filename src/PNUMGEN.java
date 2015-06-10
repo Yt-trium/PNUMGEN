@@ -54,26 +54,23 @@ public class PNUMGEN
 		R += "\"";
 		R += PN;
 		R += "\"";
-		int i;
+		int i,j;
 		
-		R += OR;
-		R += "\"";
-		for(i=0;i<10;i++)
+		String symbol = ". -";
+		
+		for(i=0;i<symbol.length();i++)
 		{
-			R += PN.charAt(i);
-			if(i%2 == 1 && i != 9)
-				R += '.';
+			R += OR;
+			R += "\"";
+			for(j=0;j<10;j++)
+			{
+				R += PN.charAt(j);
+				if(j%2 == 1 && j != 9)
+					R += symbol.charAt(i);;
+			}
+			R += "\"";
 		}
-		R += "\"";
-		R += OR;
-		R += "\"";
-		for(i=0;i<10;i++)
-		{
-			R += PN.charAt(i);
-			if(i%2 == 1 && i != 9)
-				R += ' ';
-		}
-		R += "\"";
+		
 		
 		return R;
 	}
